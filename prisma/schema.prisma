@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Nullable이면 ?
+model comment {
+    // 댓글 고유 번호
+    id Int @id @default(autoincrement())
+
+    reviewId String
+
+    /// 내용
+    text String
+
+    userId String
+
+    // 댓글 작성일자
+    createTime DateTime @default(now())
+
+}

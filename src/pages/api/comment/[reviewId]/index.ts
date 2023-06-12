@@ -7,7 +7,7 @@ export default async function handler (
         const { reviewId } = req.query
             if(reviewId != undefined) {
                 const readResult = await prisma.comment.findMany({
-                    where: { reviewId: reviewId }
+                    where: { reviewId: reviewId as string }
                 })
                 console.log(readResult)
                 if (readResult != null) {

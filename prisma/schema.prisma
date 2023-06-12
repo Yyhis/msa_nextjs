@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://6h3x9guv7bw7e09fggh4:pscale_pw_Ve0CDGpsR1X9yMbndJXQotNhcqOAE8ibdOZQKrTON1F@aws.connect.psdb.cloud/msa?sslaccept=strict"
+  url      = env("DATABASE_URL")
 }
 
 // Nullable이면 ?
